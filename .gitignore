@@ -67,3 +67,50 @@ vcpkg_installed/
 # test output & cache
 Testing/
 .cache/
+
+# ─── Binarios compilados ──────────────────────────────────────────────
+lumines
+lumines.exe
+
+# ─── Object files ─────────────────────────────────────────────────────
+*.o
+*.obj
+
+# ─── Archivos de debug ────────────────────────────────────────────────
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# ─── Makefile (no se usa, build via tasks.json) ───────────────────────
+Makefile
+
+# ─── Datos generados en runtime ───────────────────────────────────────
+lumines_scores.txt
+
+# ─── VSCode — solo se sube tasks.json, lo demas es local ──────────────
+.vscode/*
+!.vscode/tasks.json
+
+# ─── CLion ────────────────────────────────────────────────────────────
+.idea/
+cmake-build-*/
+CMakeLists.txt
+
+# ─── CMake ────────────────────────────────────────────────────────────
+CMakeCache.txt
+CMakeFiles/
+install_manifest.txt
+compile_commands.json
+
+# ─── Sistema operativo ────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─── Logs y temporales ────────────────────────────────────────────────
+*.log
+*.tmp
+*.swp
+*.swo
+*~
