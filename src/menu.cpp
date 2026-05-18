@@ -335,7 +335,7 @@ void Menu::showInstructions()
     printColorCentered(8, Color::WHITE,
         "los eliminara y ganara puntos. Alcanza 50 pts para ganar.");
     printColorCentered(9, Color::WHITE,
-        "Pierdes si los bloques llegan a la parte superior o agotaslos 3 vidas.");
+        "Pierdes si los bloques llegan a la parte superior o agotas las 3 vidas.");
 
     hLine(2, 11, '-', WIDTH - 2);
 
