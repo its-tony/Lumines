@@ -136,4 +136,11 @@ int getCh()
     return std::getchar();
 }
 
+void flushInput()
+{
+    while (getChNonBlocking() != -1) {
+        // limpia pulsaciones que quedaron pendientes
+    }
+}
+
 } // namespace Display

@@ -101,4 +101,7 @@ int getChNonBlocking();
  */
 int getCh();
 
+/** Limpia teclas pendientes en el buffer de entrada */
+void flushInput();
+
 } // namespace Display

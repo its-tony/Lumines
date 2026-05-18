@@ -119,5 +119,5 @@ private:
     /* ── Constantes de diseno ────────────────────────────────────── */
     static constexpr int   ANIM_FRAME_US  = 80'000;  ///< us entre frames
     static constexpr int   MENU_OPT_COUNT = static_cast<int>(MenuOption::COUNT);
-    static constexpr int   MENU_START_ROW = 16;
+    static constexpr int   MENU_START_ROW = 13;
 };

@@ -3,13 +3,18 @@
     {
       "type": "cppbuild",
       "label": "C/C++: build all",
-      "command": "/usr/sbin/g++",
+      "command": "g++",
       "args": [
         "-fdiagnostics-color=always",
         "-g",
-        "${workspaceFolder}/src/*.cpp",
+        "${workspaceFolder}/src/main.cpp",
+        "${workspaceFolder}/src/menu.cpp",
+        "${workspaceFolder}/src/display.cpp",
+        "${workspaceFolder}/src/score_manager.cpp",
+        "${workspaceFolder}/src/game.cpp",
         "-o",
-        "${workspaceFolder}/main"
+        "${workspaceFolder}/lumines",
+        "-pthread"
       ],
       "options": {
         "cwd": "${workspaceFolder}"
