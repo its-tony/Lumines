@@ -1,7 +1,6 @@
 # Lumines - Fase 2
 
 Proyecto 2 de Programacion de Microprocesadores.  
-Universidad del Valle de Guatemala.
 
 Este programa es una version en consola del juego Lumines. En esta fase se trabaja el entorno grafico usando ASCII-Art, con menu principal, instrucciones, puntajes destacados, seleccion de modo y una pantalla inicial del juego.
 

@@ -22,6 +22,7 @@ const int TECLA_ESC = 27;
 const int TECLA_IZQUIERDA = 1001;
 const int TECLA_DERECHA = 1002;
 const int TECLA_ABAJO = 1003;
+const int TECLA_ARRIBA = 1004;
 
 struct Pieza {
     int fila;
@@ -87,15 +88,15 @@ void runGame(GameMode mode, ScoreManager& scores) {
         } else if (tecla == 'p' || tecla == 'P') {
             juego.pausado = !juego.pausado;
         } else if (!juego.pausado) {
-            if (tecla == TECLA_IZQUIERDA || tecla == 'a' || tecla == 'A') {
+            if (tecla == TECLA_IZQUIERDA) {
                 moverPieza(juego, -1);
-            } else if (tecla == TECLA_DERECHA || tecla == 'd' || tecla == 'D') {
+            } else if (tecla == TECLA_DERECHA) {
                 moverPieza(juego, 1);
-            } else if (tecla == TECLA_ABAJO || tecla == 's' || tecla == 'S') {
+            } else if (tecla == TECLA_ABAJO) {
                 bajarPieza(juego);
             } else if (tecla == 'z' || tecla == 'Z') {
                 rotarPieza(juego, false);
-            } else if (tecla == 'x' || tecla == 'X' || tecla == 'w' || tecla == 'W' || tecla == ' ') {
+            } else if (tecla == 'x' || tecla == 'X') {
                 rotarPieza(juego, true);
             }
         }
@@ -161,6 +162,7 @@ int leerTeclaJuego() {
             if (tercero == 'D') return TECLA_IZQUIERDA;
             if (tercero == 'C') return TECLA_DERECHA;
             if (tercero == 'B') return TECLA_ABAJO;
+            if (tercero == 'A') return TECLA_ARRIBA;
         }
 
         return TECLA_ESC;
@@ -251,7 +253,7 @@ void dibujarJuego(const EstadoJuego& juego, GameMode mode) {
     moveTo(36, 15);
     cout << "controles:";
     moveTo(36, 16);
-    cout << "flechas o a/d/s";
+    cout << "flechas mover";
     moveTo(36, 17);
     cout << "z y x para rotar";
     moveTo(36, 18);

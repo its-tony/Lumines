@@ -344,10 +344,10 @@ void Menu::showInstructions()
         std::string(Color::BOLD) + Color::YELLOW, "CONTROLES");
 
     struct { const char* key; const char* action; } controls[] = {
-        { "  Flecha Izq / A  ", "Mover bloque a la izquierda  " },
-        { "  Flecha Der / D  ", "Mover bloque a la derecha    " },
-        { "  Flecha Abj / S  ", "Acelerar caida del bloque    " },
-        { "  Espacio / W     ", "Rotar el bloque 90 grados    " },
+        { "  Flecha izquierda", "Mover bloque a la izquierda  " },
+        { "  Flecha derecha  ", "Mover bloque a la derecha    " },
+        { "  Flecha abajo    ", "Acelerar caida del bloque    " },
+        { "  Z / X           ", "Rotar el bloque              " },
         { "  P               ", "Pausar / Reanudar el juego   " },
         { "  Q               ", "Salir al menu principal      " },
     };
