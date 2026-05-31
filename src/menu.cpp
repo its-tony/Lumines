@@ -241,9 +241,7 @@ MenuResult Menu::showMainMenu()
     return result;
 }
 
-/* ═══════════════════════════════════════════════════════════════════════
- *  Pantalla: Seleccion de modo
- * ═══════════════════════════════════════════════════════════════════════ */
+// Dibuja el marco del menu
 
 GameMode Menu::showModeSelection()
 {
@@ -311,9 +309,7 @@ GameMode Menu::showModeSelection()
     return (selected == 0) ? GameMode::SLOW : GameMode::FAST;
 }
 
-/* ═══════════════════════════════════════════════════════════════════════
- *  Pantalla: Instrucciones
- * ═══════════════════════════════════════════════════════════════════════ */
+//  Pantalla: Instrucciones
 
 void Menu::showInstructions()
 {
@@ -374,9 +370,7 @@ void Menu::showInstructions()
     showCursor();
 }
 
-/* ═══════════════════════════════════════════════════════════════════════
- *  Pantalla: Tabla de puntajes
- * ═══════════════════════════════════════════════════════════════════════ */
+// PANTALLA: Mejores puntajes
 
 void Menu::showScores()
 {
@@ -429,9 +423,9 @@ void Menu::showScores()
     showCursor();
 }
 
-/* ═══════════════════════════════════════════════════════════════════════
- *  Helpers de dibujo (privados)
- * ═══════════════════════════════════════════════════════════════════════ */
+// funciones auxiliares para el juego
+// reemplaza espacios por guiones bajos para que se vea mejor en la tabla de puntajes
+// tambien limita el largo del nombre a 30 caracteres
 
 void Menu::drawFrame() const
 {

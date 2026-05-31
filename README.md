@@ -1,33 +1,39 @@
-# Lumines - Fase 2
+# Lumines - Fase 3
 
-Proyecto 2 de Programacion de Microprocesadores.  
+Proyecto 2 de Programacion de Microprocesadores.
 
-Este programa es una version en consola del juego Lumines. En esta fase se trabaja el entorno grafico usando ASCII-Art, con menu principal, instrucciones, puntajes destacados, seleccion de modo y una pantalla inicial del juego.
+Este programa es una version en consola del juego Lumines. El tablero, los bloques y la linea de tiempo se muestran con ASCII-Art. En esta fase final se agrego programacion concurrente con Pthreads para manejar partes del juego en hilos separados :D
+
+```bash
+solo funciona en linux, no en Windows :)
+```
 
 ## Compilacion en WSL
 
 ```bash
-g++ src/main.cpp src/menu.cpp src/display.cpp src/score_manager.cpp src/game.cpp -o lumines -pthread
+g++ src/main.cpp src/menu.cpp src/display.cpp src/score_manager.cpp src/game.cpp src/game_logic.cpp src/game_threads.cpp src/game_screen.cpp -o lumines -pthread
+```
 
-Controles
+## Ejecucion
 
-flechas o A/D/S: mover la pieza
-Z: rotar en sentido antihorario
-X o espacio: rotar en sentido horario
-P: pausar o continuar
-Q: salir al menu
+```bash
+./lumines 
+```
 
-Elementos visuales
-[#]: bloque color 1
-[O]: bloque color 2
-[*]: bloque especial
-|: linea de tiempo
-+, -, |: bordes del tablero
+## Controles
 
+- flecha izquierda: mover la pieza a la izquierda
+- flecha derecha: mover la pieza a la derecha
+- flecha abajo: acelerar la caida
+- z: rotar en sentido antihorario
+- x: rotar en sentido horario
+- p: pausar o continuar
+- q: salir al menu
 
-Archivos principales
-src/main.cpp: inicia el programa
-src/menu.cpp: menu, instrucciones y puntajes
-src/display.cpp: funciones de consola
-src/score_manager.cpp: manejo de puntajes
-src/game.cpp: tablero y demo del juego
+## Elementos visuales
+
+- `[#]`: bloque color 1
+- `[O]`: bloque color 2
+- `[*]`: bloque especial
+- `|`: linea de tiempo
+- `+`, `-`, `|`: bordes del tablero

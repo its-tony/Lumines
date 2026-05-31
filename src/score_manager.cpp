@@ -8,7 +8,7 @@
 #include <algorithm>
 #include <fstream>
 #include <iostream>
-
+// constructor, destructor y metodos para agregar puntajes 
 ScoreManager::ScoreManager()
 {
     if (pthread_mutex_init(&m_mutex, nullptr) != 0) {
@@ -23,7 +23,7 @@ ScoreManager::~ScoreManager()
     saveToFile();
     pthread_mutex_destroy(&m_mutex);
 }
-
+// agrega un nuevo puntaje a la lista, ordena y limita al top MAX_SCORES
 void ScoreManager::addScore(const std::string& name, int score)
 {
     pthread_mutex_lock(&m_mutex);
@@ -50,7 +50,7 @@ std::vector<ScoreEntry> ScoreManager::getScores() const
     pthread_mutex_unlock(&m_mutex);
     return copy;
 }
-
+// Aqui va guardar los puntajes en un archiv de texto simple
 void ScoreManager::saveToFile() const
 {
     pthread_mutex_lock(&m_mutex);

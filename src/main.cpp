@@ -1,7 +1,6 @@
 // universidad del valle de guatemala
 // cc3086 - programacion de microprocesadores
 // proyecto 2 - lumines en consola
-// fase 2 - diseno de entorno grafico
 //
 // integrantes:
 // antony portillo 25615

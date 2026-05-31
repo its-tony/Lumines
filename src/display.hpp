@@ -17,11 +17,11 @@
 
 namespace Display {
 
-/* ── Dimensiones estandar de consola ─────────────────────────────────── */
+// dimensiones de la pantalla (pueden ser ajustadas dinámicamente)
 constexpr int WIDTH  = 80;
 constexpr int HEIGHT = 24;
 
-/* ── Codigos de color ANSI ───────────────────────────────────────────── */
+// secuencias de color ANSI
 namespace Color {
     constexpr const char* RESET   = "\033[0m";
     constexpr const char* BOLD    = "\033[1m";
@@ -46,7 +46,7 @@ namespace Color {
     constexpr const char* BG_WHITE   = "\033[47m";
 } // namespace Color
 
-/* ── Funciones de control de terminal ────────────────────────────────── */
+// control de la terminal
 
 /** Limpia la pantalla completa */
 void clear();
@@ -66,7 +66,10 @@ void setRawMode();
 /** Restaura la configuracion original de la terminal */
 void restoreMode();
 
-/* ── Funciones de dibujo ─────────────────────────────────────────────── */
+// obtiene el tamano actual de la terminal
+void getTerminalSize(int& width, int& height);
+
+// funciones de dibujo
 
 /** Imprime texto centrado en la fila dada */
 void printCentered(int row, const std::string& text);
@@ -87,7 +90,7 @@ void hLine(int col, int row, char ch, int width);
 /** Dibuja un recuadro ASCII con esquinas '+', lados '-' y '|' */
 void drawBox(int col, int row, int width, int height);
 
-/* ── Lectura de teclado ──────────────────────────────────────────────── */
+// Lectura de teclado
 
 /**
  * Lee una tecla sin bloquear.

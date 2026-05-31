@@ -12,6 +12,9 @@
         "${workspaceFolder}/src/display.cpp",
         "${workspaceFolder}/src/score_manager.cpp",
         "${workspaceFolder}/src/game.cpp",
+        "${workspaceFolder}/src/game_logic.cpp",
+        "${workspaceFolder}/src/game_threads.cpp",
+        "${workspaceFolder}/src/game_screen.cpp",
         "-o",
         "${workspaceFolder}/lumines",
         "-pthread"

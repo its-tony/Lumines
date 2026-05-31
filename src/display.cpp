@@ -10,14 +10,15 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <termios.h>
+#include <sys/ioctl.h>
 
 namespace Display {
 
-/* ── Estado interno del modulo ───────────────────────────────────────── */
+//Estado inicial del terminal para restaurar al finalizar el programa
 static struct termios s_origTermios;
 static bool           s_rawActive = false;
 
-/* ── Control de terminal ─────────────────────────────────────────────── */
+// control de la terminal
 
 void clear()
 {
@@ -63,7 +64,20 @@ void restoreMode()
     s_rawActive = false;
 }
 
-/* ── Dibujo ──────────────────────────────────────────────────────────── */
+void getTerminalSize(int& width, int& height)
+{
+    // si no se puede leer el tamano se usan valores normales
+    width = WIDTH;
+    height = HEIGHT;
+
+    struct winsize ws;
+    if (ioctl(STDOUT_FILENO, TIOCGWINSZ, &ws) == 0) {
+        if (ws.ws_col > 0) width = ws.ws_col;
+        if (ws.ws_row > 0) height = ws.ws_row;
+    }
+}
+
+// dibujar en pantalla
 
 void printCentered(int row, const std::string& text)
 {
@@ -120,7 +134,7 @@ void drawBox(int col, int row, int width, int height)
     std::fflush(stdout);
 }
 
-/* ── Teclado ─────────────────────────────────────────────────────────── */
+// teclado
 
 int getChNonBlocking()
 {
@@ -143,4 +157,4 @@ void flushInput()
     }
 }
 
-} // namespace Display
+} 
